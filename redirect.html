@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<a href="https://facebook.com/elksfunday/">Elks Family Fun Day</a>
+<br><a href="fb://profile/200558666485541">fb profile</a>
+<br><a href="fb://page/200558666485541">fb page</a>
+<br>10
+<script>
+(function() {
+  const ua = navigator.userAgent.toLowerCase();
+  const isIOS = (navigator.userAgent.match(/iPhone/i)) ||(navigator.userAgent.match(/iPod/i));
+  const isAndroidOS = ua.includes('android');
+  var url = 'https://facebook.com/elksfunday/';
+
+  // Listen fbLinks clicks on iOs and AndroidOS
+  if (isIOS) {
+    var uri = 'fb://profile/200558666485541';
+  }
+  else if (isAndroidOS) {
+    var uri = 'fb://page/200558666485541';
+  }
+  else {
+    var uri = url;
+  }
+
+  window.location = uri;
+  console.log({isIOS, isAndroidOS, uri});
+
+  setTimeout(function() {
+    //window.location = url;
+    }, 1);
+})();
+</script>
+</body>
+</html>
